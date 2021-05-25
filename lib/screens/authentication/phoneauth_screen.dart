@@ -13,7 +13,10 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
   var countryCodeController = TextEditingController(text: '+66');
   var phoneNumberController = TextEditingController();
 
-  phoneAuthentication(number) {}
+  phoneAuthentication(number) {
+    print(number);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,7 +121,7 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
               onPressed: () {
                 String number =
                     '${countryCodeController.text}${phoneNumberController.text}';
-                print(number);
+                phoneAuthentication(number);
               },
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
