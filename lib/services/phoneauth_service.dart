@@ -24,7 +24,7 @@ class PhoneAuthService {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => OTPScreen(number: number),
+          builder: (context) => OTPScreen(number: number, verId: verId),
         ),
       );
     };

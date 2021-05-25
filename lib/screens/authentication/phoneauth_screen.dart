@@ -24,6 +24,8 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
       context: context,
       backgroundColor: Colors.white,
       textColor: Colors.black,
+      loadingText: 'Please wait',
+      progressIndicatorColor: Theme.of(context).primaryColor,
     );
 
     return Scaffold(

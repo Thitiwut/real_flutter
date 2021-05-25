@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:real_flutter/screens/authentication/phoneauth_screen.dart';
+import 'package:real_flutter/screens/location_screen.dart';
 import 'package:real_flutter/screens/login_screen.dart';
 import 'package:real_flutter/screens/splash_screen.dart';
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
             routes: {
               LoginScreen.id: (context) => LoginScreen(),
               PhoneAuthScreen.id: (context) => PhoneAuthScreen(),
+              LocationScreen.id: (context) => LocationScreen(),
             },
           );
         }
