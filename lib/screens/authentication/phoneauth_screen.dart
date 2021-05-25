@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:legacy_progress_dialog/legacy_progress_dialog.dart';
+import 'package:real_flutter/services/phoneauth_service.dart';
 
 class PhoneAuthScreen extends StatefulWidget {
   static const String id = 'phone-auth-screen';
@@ -13,12 +15,17 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
   var countryCodeController = TextEditingController(text: '+66');
   var phoneNumberController = TextEditingController();
 
-  phoneAuthentication(number) {
-    print(number);
-  }
+  PhoneAuthService _service = PhoneAuthService();
 
   @override
   Widget build(BuildContext context) {
+    //Create an instance of ProgressDialog
+    ProgressDialog progressDialog = ProgressDialog(
+      context: context,
+      backgroundColor: Colors.white,
+      textColor: Colors.black,
+    );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -75,19 +82,19 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                   flex: 3,
                   child: TextFormField(
                     onChanged: (value) {
-                      if (value.length == 10) {
+                      if (value.length == 9) {
                         setState(() {
                           validate = true;
                         });
                       }
-                      if (value.length < 10) {
+                      if (value.length < 9) {
                         setState(() {
                           validate = false;
                         });
                       }
                     },
                     autofocus: true,
-                    maxLength: 10,
+                    maxLength: 9,
                     keyboardType: TextInputType.phone,
                     controller: phoneNumberController,
                     // onChanged: (value) {
@@ -119,9 +126,11 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
                           Theme.of(context).primaryColor)
                       : MaterialStateProperty.all(Colors.grey)),
               onPressed: () {
+                progressDialog.show();
                 String number =
                     '${countryCodeController.text}${phoneNumberController.text}';
-                phoneAuthentication(number);
+
+                _service.verfifyPhoneNumber(context, number);
               },
               child: Padding(
                 padding: const EdgeInsets.all(12.0),

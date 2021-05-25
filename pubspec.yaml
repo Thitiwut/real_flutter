@@ -16,7 +16,9 @@ dependencies:
   flutter_native_splash: ^1.1.8+4
   animated_text_kit: ^4.2.1
   flutter_signin_button: ^2.0.0
-
+  firebase_core:
+  firebase_auth:
+  legacy_progress_dialog: ^0.0.9
 
 dev_dependencies:
   flutter_test:
