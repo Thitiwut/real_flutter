@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:real_flutter/screens/authentication/phoneauth_screen.dart';
 import 'package:real_flutter/screens/login_screen.dart';
 import 'package:real_flutter/screens/splash_screen.dart';
 
@@ -14,12 +15,18 @@ class MyApp extends StatelessWidget {
       builder: (context, AsyncSnapshot snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return MaterialApp(
-              debugShowCheckedModeBanner: false, home: SplashScreen());
+              theme: ThemeData(primaryColor: Colors.cyan.shade900),
+              debugShowCheckedModeBanner: false,
+              home: SplashScreen());
         } else {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(primaryColor: Colors.cyan.shade900),
             home: LoginScreen(),
+            routes: {
+              LoginScreen.id: (context) => LoginScreen(),
+              PhoneAuthScreen.id: (context) => PhoneAuthScreen(),
+            },
           );
         }
       },

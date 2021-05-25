@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:real_flutter/screens/authentication/phoneauth_screen.dart';
 
 class AuthUi extends StatelessWidget {
   @override
@@ -14,7 +15,9 @@ class AuthUi extends StatelessWidget {
           child: ElevatedButton(
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.white)),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, PhoneAuthScreen.id);
+              },
               child: Row(
                 children: [
                   Icon(Icons.phone_android_outlined, color: Colors.black),
