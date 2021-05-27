@@ -1,10 +1,33 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:real_flutter/screens/authentication/otp_screen.dart';
+import 'package:real_flutter/screens/location_screen.dart';
 
 class PhoneAuthService {
   FirebaseAuth auth = FirebaseAuth.instance;
+  User user = FirebaseAuth.instance.currentUser;
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+  Future<void> addUser(context) async {
+    final QuerySnapshot result =
+        await users.where('uid', isEqualTo: user.uid).get();
+
+    List<DocumentSnapshot> document = result.docs;
+
+    if (document.length > 0) {
+      Navigator.pushReplacementNamed(context, LocationScreen.id);
+    } else {
+      return users.doc(user.uid).set({
+        'uid': user.uid,
+        'mobile': user.phoneNumber,
+        'email': user.email
+      }).then((value) {
+        Navigator.pushReplacementNamed(context, LocationScreen.id);
+      }).catchError((error) => print("Failed to add user: $error"));
+    }
+  }
 
   Future<void> verfifyPhoneNumber(BuildContext context, number) async {
     final PhoneVerificationCompleted verificationCompleted =

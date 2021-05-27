@@ -19,6 +19,7 @@ dependencies:
   firebase_core:
   firebase_auth:
   legacy_progress_dialog: ^0.0.9
+  cloud_firestore:
 
 dev_dependencies:
   flutter_test:

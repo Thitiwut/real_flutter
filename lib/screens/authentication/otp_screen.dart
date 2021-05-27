@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:real_flutter/screens/authentication/phoneauth_screen.dart';
-import 'package:real_flutter/screens/location_screen.dart';
+import 'package:real_flutter/services/phoneauth_service.dart';
 
 class OTPScreen extends StatefulWidget {
   final String number, verId;
@@ -16,6 +16,7 @@ class OTPScreen extends StatefulWidget {
 class _OTPScreenState extends State<OTPScreen> {
   bool _loading = false;
 
+  PhoneAuthService _services = PhoneAuthService();
   String error = '';
   var _text1 = TextEditingController();
   var _text2 = TextEditingController();
@@ -30,8 +31,9 @@ class _OTPScreenState extends State<OTPScreen> {
       PhoneAuthCredential credential = PhoneAuthProvider.credential(
           verificationId: widget.verId, smsCode: otp);
       final User user = (await _auth.signInWithCredential(credential)).user;
+
       if (user != null) {
-        Navigator.pushReplacementNamed(context, LocationScreen.id);
+        _services.addUser(context);
       } else {
         print('Login Failed');
         if (mounted) {
