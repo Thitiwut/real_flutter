@@ -127,7 +127,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     controller: _text1,
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(border: OutlineInputBorder()),
+                    decoration: InputDecoration(),
                     onChanged: (value) {
                       if (value.length == 1) {
                         node.nextFocus();
@@ -144,7 +144,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     controller: _text2,
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(border: OutlineInputBorder()),
+                    decoration: InputDecoration(),
                     onChanged: (value) {
                       if (value.length == 1) {
                         node.nextFocus();
@@ -161,7 +161,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     controller: _text3,
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(border: OutlineInputBorder()),
+                    decoration: InputDecoration(),
                     onChanged: (value) {
                       if (value.length == 1) {
                         node.nextFocus();
@@ -178,7 +178,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     controller: _text4,
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(border: OutlineInputBorder()),
+                    decoration: InputDecoration(),
                     onChanged: (value) {
                       if (value.length == 1) {
                         node.nextFocus();
@@ -195,7 +195,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     controller: _text5,
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(border: OutlineInputBorder()),
+                    decoration: InputDecoration(),
                     onChanged: (value) {
                       if (value.length == 1) {
                         node.nextFocus();
@@ -212,7 +212,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     controller: _text6,
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(border: OutlineInputBorder()),
+                    decoration: InputDecoration(),
                     onChanged: (value) {
                       if (value.length == 1) {
                         if (_text1.text.length == 1) {

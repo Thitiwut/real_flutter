@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     const colorizeColors = [
-      Colors.cyan,
+      Colors.deepOrangeAccent,
       Colors.white,
     ];
 
@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.cyan.shade900,
+      backgroundColor: Colors.orange[50],
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,

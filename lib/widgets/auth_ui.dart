@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/button_view.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
+
 import 'package:real_flutter/screens/authentication/phoneauth_screen.dart';
 
 class AuthUi extends StatelessWidget {
@@ -31,33 +30,33 @@ class AuthUi extends StatelessWidget {
                 ],
               )),
         ),
-        SignInButton(
-          Buttons.Google,
-          text: "Sign up with Google",
-          onPressed: () {},
-        ),
-        SignInButton(
-          Buttons.FacebookNew,
-          text: "Sign up with Facebook",
-          onPressed: () {},
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            'OR',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            'Login withe email',
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.underline),
-          ),
-        )
+        // SignInButton(
+        //   Buttons.Google,
+        //   text: "Sign up with Google",
+        //   onPressed: () {},
+        // ),
+        // SignInButton(
+        //   Buttons.FacebookNew,
+        //   text: "Sign up with Facebook",
+        //   onPressed: () {},
+        // ),
+        // Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: Text(
+        //     'OR',
+        //     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        //   ),
+        // ),
+        // Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: Text(
+        //     'Login withe email',
+        //     style: TextStyle(
+        //         color: Colors.white,
+        //         fontWeight: FontWeight.bold,
+        //         decoration: TextDecoration.underline),
+        //   ),
+        // )
       ],
     ));
   }

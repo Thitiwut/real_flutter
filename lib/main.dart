@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.cyan.shade900),
+      theme: ThemeData(primaryColor: Colors.orangeAccent[700]),
       initialRoute: SplashScreen.id,
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
@@ -25,27 +25,5 @@ class MyApp extends StatelessWidget {
         LocationScreen.id: (context) => LocationScreen(),
       },
     );
-    // return FutureBuilder(
-    //   future: Future.delayed(Duration(seconds: 3)),
-    //   builder: (context, AsyncSnapshot snapshot) {
-    //     if (snapshot.connectionState == ConnectionState.waiting) {
-    //       return MaterialApp(
-    //           theme: ThemeData(primaryColor: Colors.cyan.shade900),
-    //           debugShowCheckedModeBanner: false,
-    //           home: SplashScreen());
-    //     } else {
-    //       return MaterialApp(
-    //         debugShowCheckedModeBanner: false,
-    //         theme: ThemeData(primaryColor: Colors.cyan.shade900),
-    //         home: LoginScreen(),
-    //         routes: {
-    //           LoginScreen.id: (context) => LoginScreen(),
-    //           PhoneAuthScreen.id: (context) => PhoneAuthScreen(),
-    //           LocationScreen.id: (context) => LocationScreen(),
-    //         },
-    //       );
-    //     }
-    //   },
-    // );
   }
 }
